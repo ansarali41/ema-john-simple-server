@@ -11,6 +11,11 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.json())
 
+// root page
+app.get('/', (req, res) => {
+    res.send("hello DB,it's is working...!")
+})
+
 // mongodb
 client.connect(err => {
     const productsCollection = client.db("emaJohnStore").collection("products");
